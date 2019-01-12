@@ -4,7 +4,7 @@ import './stylesheets/index.css';
 
 import Index from './pages/Index';
 import Loading from './pages/Loading';
-import Meals from './pages/Meals';
+import Verification from './pages/Verification';
 
 import booking from './lib/booking-service';
 
@@ -39,7 +39,7 @@ class App extends Component {
       <Router>
         <Switch>
           {loading ? <Loading /> :<Route path="/" exact component={Index} />}
-          {loading ? <Loading /> :<Route path={`/${booking.recordLocator}/:name`} component={Meals} />}
+          {loading ? <Loading /> :<Route path={`/${booking.recordLocator}/meals`} component={Verification} />}
         </Switch>
       </Router>
     );
