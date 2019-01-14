@@ -12,7 +12,7 @@ class Booking {
       .then(({ data }) => data);
   }
 
-  getPassenger() {
+  getMeals() {
     return this.booking.get('/')
       .then(({ data }) => data);
   }

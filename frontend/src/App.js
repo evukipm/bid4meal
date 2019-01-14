@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import './stylesheets/index.css';
 
 import Index from './pages/Index';
-import Loading from './pages/Loading';
-import Verification from './pages/Verification';
+import Loading from './pages/validations/Loading';
+import Verification from './pages/validations/Verification';
 
 import booking from './lib/booking-service';
 
@@ -14,6 +14,7 @@ class App extends Component {
     user: 'Visitor',
     loading: true,
     booking: {},
+    meals: [],
   }
 
   componentDidMount() {
@@ -23,8 +24,16 @@ class App extends Component {
   update = () => {
     booking.getBooking()
     .then(result => {
+      const meals = result.options;
+      
+      meals.forEach(meal => {
+        const {max, min, jump} = meal.priceRange;
+        meal.price = this.getRandomprice(max, min, jump);
+      });
+
       this.setState({
         booking: result.booking,
+        meals,
         loading: false,
       })
     })
@@ -33,13 +42,19 @@ class App extends Component {
     })
   }
 
+  getRandomprice = (max, min, jump) =>{
+    return Math.floor(Math.random() * (max - min) + jump);
+  }
+
   render() {
-    let {loading, booking} = this.state;
+    let {loading, booking, meals} = this.state;
     return (
       <Router>
         <Switch>
           {loading ? <Loading /> :<Route path="/" exact component={Index} />}
-          {loading ? <Loading /> :<Route path={`/${booking.recordLocator}/meals`} component={Verification} />}
+          {loading ? <Loading /> :<Route path={`/${booking.recordLocator}/meals`} component={
+            props => <Verification {...props} flight={booking} meals={meals}/>} 
+          />}
         </Switch>
       </Router>
     );

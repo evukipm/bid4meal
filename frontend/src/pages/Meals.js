@@ -1,16 +1,25 @@
 import React, { Component } from 'react';
+import Info from '../components/Info';
+import Journey from '../components/journey';
 
-export default class Meals extends Component {
+class Meals extends Component {
   render() {
-    const { passenger } = this.props;
-    console.log(passenger);
+    const { passenger, flight, meals } = this.props;
+    const journeys = flight.journeys;
+
     return (
       <div>
-        Hi,
-        {' '}
-        {passenger.firstName}
-!
+        <Info passenger={passenger} />
+        {journeys.map(journey => (
+          <Journey
+            key={journey.key}
+            journey={journey}
+            meals={meals}
+          />
+        ))}
       </div>
     );
   }
 }
+
+export default Meals;

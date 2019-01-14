@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export default class Loading extends Component {
+class Loading extends Component {
 
   state = {
     rotation: true,
@@ -31,3 +31,4 @@ export default class Loading extends Component {
   }
 }
 
+export default Loading;
