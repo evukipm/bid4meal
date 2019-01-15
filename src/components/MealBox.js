@@ -1,7 +1,6 @@
 import React from 'react';
 
 export default function MealBox(props) {
-  console.log(props);
   const {
     desc, price, currency, mealId,
   } = props.meal;

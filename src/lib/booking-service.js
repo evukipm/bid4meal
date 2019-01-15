@@ -16,6 +16,11 @@ class Booking {
     return this.booking.get('/')
       .then(({ data }) => data);
   }
+
+  sendMeals(selection) {
+    // mocked call to server
+    // return this.booking.put('/selection', {selection}); for example
+  }
 }
 
 const booking = new Booking();
