@@ -9,7 +9,10 @@ Bid 4 meal is a user interface made it in react for select the meal you want in 
 - 3:
 *npm start*
 
-A window browser open the app. As a user you've recibed a direct link:
+A window browser open the app. As a user you've recived a direct link:
+http://localhost:3000/TST123/meals?first=Burt&last=Reynolds
+http://localhost:3000/TST123/meals?first=Susan&last=Clark
+http://localhost:3000/TST123/meals?first=Kevin&last=Reynolds
 
 
 ## User Story
