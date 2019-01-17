@@ -33,15 +33,21 @@ export default class Journey extends Component {
     const { key } = this.props.journey;
     const { meals } = this.props;
     const { opened, selection } = this.state;
+    const mealContainer = <div>
+    <div className="meal">
+      <div><i className="fas fa-utensils"></i></div>
+      <div>{selection.desc}</div>
+    </div>
+    <button onClick={this.openMealOptions}>Change selection</button>
+    </div>
 
     return (
-      <div>
-        <p>
-          <strong>Flight:</strong>
-          {` ${key}`}
-        </p>
-        <strong>Meal selected: </strong> {selection ? selection.desc : <button onClick={this.openMealOptions}>See the meals</button>}
-        
+      <div className="flight-box">
+        <div className="flight">
+          <div><i className="fas fa-plane"></i></div>
+          <div>{key}</div>
+        </div>
+        {selection ? mealContainer : <button onClick={this.openMealOptions}>{opened ? 'Close' : 'Open'} the meal list</button>}
         {opened ? <MealList meals={meals} mealSelected={this.mealSelected} /> : null}
       </div>
     );

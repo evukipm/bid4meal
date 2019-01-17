@@ -5,8 +5,7 @@ import MealBox from './MealBox';
 class MealList extends Component {
 
   state = {
-    selectedid: '',
-    saved: false,
+    selectedid: false,
   }
 
   selectMeal = (mealId) => {
@@ -18,16 +17,12 @@ class MealList extends Component {
     const {selectedid} = this.state
     if(selectedid !== ''){
       this.props.mealSelected(selectedid)
-    }else{
-      this.setState({
-        saved: false,
-      })
     }
   }
 
   render() {
     const { meals } = this.props;
-    const { selectedid, saved } = this.state;
+    const { selectedid } = this.state;
     return (
       <div>
         {meals.map(meal => (
@@ -35,11 +30,11 @@ class MealList extends Component {
               <MealBox                
                 meal={meal}
                 select={this.selectMeal}
+                save={this.saveSelection}
               />
           </div>
         ))}
-        <button onClick={this.saveSelection}>Save your selection</button>
-        {saved ? null : <p>Please, select a meal before continue.</p>}
+        {selectedid ? null : <p>Please, select a meal before continue.</p>}
       </div>
     );
   }

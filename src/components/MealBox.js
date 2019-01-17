@@ -1,9 +1,7 @@
 import React from 'react';
 
 export default function MealBox(props) {
-  const {
-    desc, price, currency, mealId,
-  } = props.meal;
+  const { desc, price, mealId } = props.meal;
 
   const selectMeal = () => {
     props.select(mealId);
@@ -11,8 +9,9 @@ export default function MealBox(props) {
 
   return (
     <div className="meal-box" onClick={selectMeal}>
-      <h2>{desc}</h2>
-      <h3>{price + currency}</h3>
+      <div className="box1">{desc}</div>
+      <div className="box2">{price + ' €'}</div>
+      <div className="box3"><button onClick={props.save}><i className="fas fa-check"></i></button></div>
     </div>
   );
 }

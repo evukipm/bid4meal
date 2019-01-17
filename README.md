@@ -14,6 +14,9 @@ A window browser open the app. As a user you've recived a direct link:
 - http://localhost:3000/TST123/meals?first=Susan&last=Clark
 - http://localhost:3000/TST123/meals?first=Kevin&last=Reynolds
 
+## Output json
+When you finish selecting your meals, you can see the output json in the console of the browser.
+
 
 ## User Story
 - **As a user I can**: 
@@ -22,10 +25,10 @@ A window browser open the app. As a user you've recived a direct link:
 - Have acces to the app only if I'm allowed
 - See a intro with the information of my flight to verify if is correct
 - Click a button to select my meal for every one of my journeys
-- See a list of the meals an his prices
+- See a list of the meals and his prices
 - Select the meal I want in my flight and save it
 
 ## Backlog
-- Be able to insert mi flight locator and my name and surname to access
+- Be able to insert mi flight locator and my name and surname to access, without the link
 - Have a small password related to my booking for more security
 - Convert the currency to my currency, only cause I don't know the difference with mine and I want to know how much I'm paying.

@@ -1,0 +1,53 @@
+.meals-content{
+  width:100vw;
+  min-height:100vh;
+  background:$white;
+
+  h3{
+    padding:10px;
+    font-size:20px;
+    color:$dark-blue;
+    text-align:center;
+    font-family:$title-font;
+    text-transform:uppercase;
+    border-bottom:2px solid $yellow;
+    background:white;
+  }
+  .info-block, .flight-box{
+    margin:30px 10px;
+    border-radius:4px;
+    background:white;
+
+    .flight, .meal{
+      display:flex;
+      justify-content:flex-start;
+      padding:10px 0;
+    }
+    .flight i, .meal i{
+      padding:0 10px;
+      color:$dark-blue;
+      width:20px;
+      text-align:center;
+    }
+  }
+  .send-box{
+    text-align:center;
+    button{
+      background:$green;
+      border-color:$green;
+      color:$white;
+    }
+  }
+  .selected{
+    background:$dark-white;
+
+    button{
+      color:$yellow;
+      border-color:$green;
+      background:$green;
+    }
+    .box2{
+      color:$green;
+    }
+  }
+}

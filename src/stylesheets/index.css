@@ -58,5 +58,129 @@
     transform: rotateY(360deg);
   }
 }
+.meals-content {
+  width: 100vw;
+  min-height: 100vh;
+  background: #f9f9f9;
+}
+.meals-content h3 {
+  padding: 10px;
+  font-size: 20px;
+  color: #2F4858;
+  text-align: center;
+  font-family: "Coda";
+  text-transform: uppercase;
+  border-bottom: 2px solid #F9BA48;
+  background: white;
+}
+.meals-content .info-block, .meals-content .flight-box {
+  margin: 30px 10px;
+  border-radius: 4px;
+  background: white;
+}
+.meals-content .info-block .flight, .meals-content .info-block .meal, .meals-content .flight-box .flight, .meals-content .flight-box .meal {
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px 0;
+}
+.meals-content .info-block .flight i, .meals-content .info-block .meal i, .meals-content .flight-box .flight i, .meals-content .flight-box .meal i {
+  padding: 0 10px;
+  color: #2F4858;
+  width: 20px;
+  text-align: center;
+}
+.meals-content .send-box {
+  text-align: center;
+}
+.meals-content .send-box button {
+  background: #5f9b31;
+  border-color: #5f9b31;
+  color: #f9f9f9;
+}
+.meals-content .selected {
+  background: #ededed;
+}
+.meals-content .selected button {
+  color: #F9BA48;
+  border-color: #5f9b31;
+  background: #5f9b31;
+}
+.meals-content .selected .box2 {
+  color: #5f9b31;
+}
+
+.info-block {
+  display: flex;
+  justify-content: center;
+  font-family: "Coda";
+  font-size: 22px;
+  color: #2F4858;
+  text-transform: uppercase;
+  padding: 40px 10px;
+  text-align: center;
+}
+.info-block .box {
+  padding: 0 10px;
+}
+
+.meal-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  font-size: 18px;
+  border-bottom: 1px solid #2F4858;
+}
+.meal-box .box1, .meal-box .box2 {
+  padding: 5px;
+}
+.meal-box .box1 {
+  width: 265px;
+}
+.meal-box .box2 {
+  width: 60px;
+  text-align: right;
+  color: #2F4858;
+}
+.meal-box .box3 {
+  width: 50px;
+  text-align: right;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+.meal-box button {
+  padding: 5px;
+  border-radius: 50%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  width: 30px;
+}
+
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  min-height: 100vh;
+}
+
+button {
+  background: none;
+  color: #2F4858;
+  text-align: center;
+  display: block;
+  border: 1px solid #2F4858;
+  margin: 15px auto;
+  padding: 15px;
+  font-size: 16px;
+  border-radius: 4px;
+  width: 90%;
+}
 
 /*# sourceMappingURL=index.css.map */

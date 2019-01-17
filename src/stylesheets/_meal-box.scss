@@ -1,0 +1,35 @@
+.meal-box{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:10px;
+  font-size:18px;
+  border-bottom:1px solid $dark-blue;
+
+  .box1, .box2{
+    padding:5px;
+  }
+  .box1{
+    width:265px;
+  }
+  .box2{
+    width:60px;
+    text-align:right;
+    color:$dark-blue;
+  }
+  .box3{
+    width:50px;
+    text-align:right;
+    display:flex;
+    align-content:center;
+    justify-content:center;
+  }
+  button{
+    padding:5px;
+    border-radius:50%;
+    display:flex;
+    align-content:center;
+    justify-content:center;
+    width:30px;
+  }
+}

@@ -7,5 +7,37 @@
 }
 
 $yellow: #F9BA48;
+$dark-blue:#2F4858;
+$dark-white:#ededed;
+$white:#f9f9f9;
+$green:#5f9b31;
+$title-font:'Coda';
 
 @import 'loading';
+@import 'meals';
+@import 'info';
+@import 'meal-box';
+
+*, *:before, *:after {
+  margin:0;
+  padding:0;
+}
+body{
+  margin:0;
+  padding:0;
+  width:100vw;
+  min-height:100vh;
+}
+
+button{
+  background:none;
+  color:$dark-blue;
+  text-align:center;
+  display:block;
+  border:1px solid $dark-blue;
+  margin:15px auto;
+  padding:15px;
+  font-size:16px;
+  border-radius:4px;
+  width:90%;
+}

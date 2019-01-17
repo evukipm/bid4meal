@@ -2,16 +2,15 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import './stylesheets/index.css';
 
-import Index from './pages/Index';
 import Loading from './pages/validations/Loading';
 import Verification from './pages/validations/Verification';
+import Page404 from './pages/validations/Page404';
 
 import booking from './lib/booking-service';
 
 class App extends Component {
 
   state ={
-    user: 'Visitor',
     loading: true,
     booking: {},
     meals: [],
@@ -51,9 +50,10 @@ class App extends Component {
     return (
       <Router>
         <Switch>
-          {loading ? <Loading /> :<Route path="/" exact component={Index} />}
           {loading ? <Loading /> :<Route path={`/${booking.recordLocator}/meals`} component={
             props => <Verification {...props} flight={booking} meals={meals}/>} 
+          />}
+          {loading ? <Loading /> : <Route component={Page404} />} 
           />}
         </Switch>
       </Router>

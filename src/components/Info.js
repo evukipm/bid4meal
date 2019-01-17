@@ -1,14 +1,25 @@
 import React from 'react';
 
 export default function Info(props) {
-  const { firstName, lastName, prefix } = props.passenger;
+
+  const takeGender = () => {
+    const {prefix} = props.passenger;
+    if(prefix === 'Mr'){
+      return <div className="box"><i className="fas fa-male"></i></div>;
+    }else if(prefix === 'Mrs'){
+      return <div className="box"><i className="fas fa-female"></i></div>;
+    }else{
+      return <div className="box"></div>
+    }
+  }
+
+  const { firstName, lastName } = props.passenger;
+  const prefix = takeGender()
   return (
     <div className="info-block">
-      <h3>Welcome to bid4meal</h3>
-      <p>
-        <strong>Passenger:</strong>
-        {` ${prefix}. ${firstName} ${lastName}`}
-      </p>
+      {prefix}
+      <div className="box">{firstName}</div>
+      <div className="box">{lastName}</div>
     </div>
   );
 }

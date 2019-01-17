@@ -1,0 +1,14 @@
+.info-block{
+  display:flex;
+  justify-content:center;
+  font-family:$title-font;
+  font-size:22px;
+  color:$dark-blue;
+  text-transform:uppercase;
+  padding:40px 10px;
+  text-align:center;
+
+  .box{
+    padding:0 10px;
+  }
+}

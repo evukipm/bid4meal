@@ -32,10 +32,19 @@ class Meals extends Component {
         selectionCopy[i].amount = meal.price;
         selectionCopy[i].currency = meal.currency;
         selectionCopy[i].mealId = meal.mealId;
-        this.setState({
-          selection:selectionCopy 
-        })
+          this.setState({
+            selection:selectionCopy
+          })
       }
+    }
+  }
+
+  isSelected = () =>{
+    const {selection} = this.state;
+    if(selection[0].mealId && selection[1].mealId){
+      return <button className="send-button" onClick={this.sendSelection}>Send selection</button>
+    }else{
+      return <p>Please select the two meals before continue</p>
     }
   }
 
@@ -50,22 +59,26 @@ class Meals extends Component {
 
   render() {
     const { passenger, flight, meals } = this.props;
-    const { selected } = this.state;
+    const selected  = this.isSelected();
     const journeys = flight.journeys;
 
     return (
-      <div>
-        <Info passenger={passenger} />
-        {journeys.map(journey => (
+      <div className="meals-content">
+        <h3>Welcome to bid4meal</h3>
+        <div className="meals-info">
+          <Info passenger={passenger} />
+          {journeys.map(journey => (
           <Journey
             key={journey.key}
             journey={journey}
             meals={meals}
             saveMeal={this.saveMeal}
           />
-        ))}
-        <button onClick={this.sendSelection}>Send selection</button>
-        {selected ? null : <p>Please select the two meals</p>}
+          ))}
+        </div>
+        <div className="send-box">
+          {selected}
+        </div>
       </div>
     );
   }
